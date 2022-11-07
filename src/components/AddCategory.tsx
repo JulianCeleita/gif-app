@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-export const AddCategory = () => {
+export const AddCategory = ( {setCategory} ) => {
 
     const [inputValue, setInputValue] = useState('Ducati Panigale')
 
@@ -13,8 +13,10 @@ export const AddCategory = () => {
     const onSubmit = (event) => {               // Recibo el evento enviado por el formulario más abajo
         event.preventDefault();                 // Prevengo que se refresque la página al darle enter al input
         console.log(inputValue);                // Imprimo en pantalla el valor recibido en el input (este lo necesitaré para procesarlo)
-
+        setCategory( category => [inputValue, ...category] );
     }
+
+
 
   return (
     <form onSubmit={ (event) => onSubmit(event) }>     {/* Al darle submit envío el evento(resultado del formulario) a una función Onsubmit */}
