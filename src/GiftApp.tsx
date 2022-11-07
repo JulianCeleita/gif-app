@@ -8,7 +8,7 @@ export const GifApp = () => {
     
     const onAddCategory = ( ) => {                      // Para agregar una categoría de gits
 
-        setCategory([ ...category, 'Valorant' ]);        //Toma la ultima impresión de category y le agrega el elemento valorant
+        setCategory([ ...category, 'Valorant' ]);       //Toma la ultima impresión de category y le agrega el elemento valorant
     };
 
     return (
@@ -17,11 +17,11 @@ export const GifApp = () => {
           <h1>Gif App</h1>
   
           {/* Input */}
-          <AddCategory setCategory={setCategory} />
+          <AddCategory setCategory={setCategory} />             {/* setCategory es una propiedad que contiene la función setCategory */}
   
           {/* Listado de Gifs */}
           <ol>
-            { category.map( category => {                          // Barre cada uno de los elementos del arreglo y les da el valor de abajo
+            { category.map( category => {                        // Barre cada uno de los elementos del arreglo y les da el valor de abajo
                 return <li key={category}> {category} </li>      // Debo darle un key unico, como su identificador
             })}
           </ol>
