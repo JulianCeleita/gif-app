@@ -5,7 +5,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const GifApp = () => {
 
-    const [category, setCategory] = useState([ 'Ducati Panigale v4', 'Yamaha R6' ]);      // Este arreglo será llamado por el .map para que aparezca
+    const [category, setCategory] = useState([ 'Ducati Panigale v4' ]);      // Este arreglo será llamado por el .map para que aparezca
     
     const onAddCategory = ( onNewCategory:any ) => {                    // Para agregar una categoría de gits
 
