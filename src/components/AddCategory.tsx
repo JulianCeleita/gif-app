@@ -5,14 +5,14 @@ export const AddCategory = ( {onNewCategory}:{onNewCategory:any} ) => {
     const [inputValue, setInputValue] = useState('')
 
     const onInputChange = ({target}:{target:any}) => {      // Va a arrojar el valor de target dentro del input
-        console.log(target.value);
+        //console.log(target.value);
         setInputValue( target.value );                      // Al poner un valor en input extraiga el valor y envielo como el target
     }
 
     const onSubmit = (event:any) => {                       // Recibo el evento enviado por el formulario más abajo
-      const newInputValue = (inputValue.trim());            // trim remueve los espacios al inicio y al final
-        
-        event.preventDefault();                             // Prevengo que se refresque la página al darle enter al input
+      event.preventDefault();                               // Prevengo que se refresque la página al darle enter al input
+      
+      const newInputValue = inputValue.trim();              // trim remueve los espacios al inicio y al final
         if ( inputValue.trim().length <= 1 ) return;        // Si el valor en el input es < o = a 1, haga un return y NO ejecuta el resto de codigo.
         onNewCategory(newInputValue);                       // tomo el valor limpio de NewInputValue y lo imprimo como una nueva categoría 
         setInputValue('');                                  // Al final de la función, tome la casilla de input y la deje vacia
