@@ -4,11 +4,11 @@ import { AddCategory } from './components/AddCategory';
 
 export const GifApp = () => {
 
-    const [category, setCategory] = useState([ 'One Punch', 'Dragón' ]);      // Este arreglo será llamado por el .map para que aparezca
+    const [category, setCategory] = useState([ 'Ducati Panigale v4', 'Yamaha R6' ]);      // Este arreglo será llamado por el .map para que aparezca
     
-    const onAddCategory = ( ) => {                      // Para agregar una categoría de gits
+    const onAddCategory = ( onNewCategory:any ) => {                      // Para agregar una categoría de gits
 
-        setCategory([ ...category, 'Valorant' ]);       //Toma la ultima impresión de category y le agrega el elemento valorant
+      setCategory([ ...category, onNewCategory ]);                      //Toma la ultima impresión de category y le agrega el elemento newCategory
     };
 
     return (
@@ -17,7 +17,7 @@ export const GifApp = () => {
           <h1>Gif App</h1>
   
           {/* Input */}
-          <AddCategory setCategory={setCategory} />             {/* setCategory es una propiedad que contiene la función setCategory */}
+          <AddCategory onNewCategory= { onAddCategory } />             {/* setCategory es una propiedad que contiene la función setCategory */}
   
           {/* Listado de Gifs */}
           <ol>
