@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { GifItem } from './GifItem';
 import { getGifs } from '../helpers/getGifs';
 
 // Ejecutamos el funcional component pero no debe ir dentro ninguna petición de http porque sino va a ocupar mucho espacio en memoria al estarla pidiendo
@@ -14,18 +15,21 @@ export const GifGrid = ( {category}:{category:any} ) => {           // Va a arro
 
     useEffect( () => {                                  // useEffect dispara efectos secundarios: cuando el componente se renderiza, quiero generar tal efecto. Cuando la función cambia, quiero generar tal efecto...etc.
         getImages();                                    // Incluyo ya las images en el useEffect
-    }, [] )                                             // Si [] lo dejo vacío, va a cargar el componente en consola solo la primer vez cuando se construye 
+    }, [])                                              // Si [] lo dejo vacío, va a cargar el componente en consola solo la primer vez cuando se construye 
 
     return (
         <>
             <h3> {category} </h3>
-            <ol>
+            <div className='card-grid'>
                 {
-                    images.map( ({ id, title }) => (                //Hago un arreglo de image y desestructuro sacando el id y el title
-                        <li key={ id }> { title } </li>             //Uso el id y el title sacados de la imagen 
+                    images.map( ( image ) => (                //Hago un arreglo de image y desestructuro sacando el id y el title
+                        <GifItem 
+                            key={ image.id }
+                            { ...image }                     // Esparcimos las props como title, id, url, para que puedan ser tomadas de cualquier lado 
+                        /> 
                     ))
                 }
-            </ol>
+            </div>
             
         </>
     )
