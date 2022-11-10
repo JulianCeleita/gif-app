@@ -5,7 +5,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const GifApp = () => {
 
-    const [category, setCategory] = useState([ 'Ducati' ]);      // Este arreglo será llamado por el .map para que aparezca
+    const [category, setCategory] = useState([ 'Transformers' ]);      // Este arreglo será llamado por el .map para que aparezca
     
     const onAddCategory = ( onNewCategory:any ) => {                    // Para agregar una categoría de gits
 
@@ -24,11 +24,11 @@ export const GifApp = () => {
           <h1>Gif App</h1>
   
           <AddCategory onNewCategory= { onAddCategory } />              {/* onNewCategory es una propiedad que contiene la función onAddCategory */}
-  
+
           {
-            category.map( category => (                                 // Barre cada uno de los elementos del arreglo y les da el valor de abajo
+            category.map( (category, index:number) => (                                  // Barre cada uno de los elementos del arreglo y les da el valor de abajo
                 <GifGrid 
-                  key={category}                                        // Debo darle un key unico, como su identificador
+                  key={`${ category }${ index }`}                                        // Debo darle un key unico, como su identificador
                   category={category}
                 />
             ))

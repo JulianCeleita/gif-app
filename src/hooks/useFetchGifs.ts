@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Image } from '../components/GifGrid';
 import { getGifs } from '../helpers/getGifs';
 
 // Hook = No es más que una función que regresa algo (return)
 
-export const useFetchGifs = ( {category}:{category:any} ) => {
+export const useFetchGifs = ( {category}:{category:string} ) => {
 
-    const [ images, setImages ] = useState([]);
+    const [ images, setImages ] = useState<Image[]>([]);
     const [isLoading, setIsLoading] = useState( true);      // El isLoading va a ser true antes de cargar las images
 
     const getImages = async() => {
