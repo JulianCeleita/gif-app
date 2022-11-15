@@ -5,7 +5,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const GifApp = () => {
 
-    const [category, setCategory] = useState([ 'Transformers' ]);      // Este arreglo será llamado por el .map para que aparezca
+    const [category, setCategory] = useState([ 'Ferrari' ]);      // Este arreglo será llamado por el .map para que aparezca
     
     const onAddCategory = ( onNewCategory:any ) => {                    // Para agregar una categoría de gits
 
