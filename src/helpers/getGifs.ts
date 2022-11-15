@@ -4,7 +4,7 @@
 export const getGifs = async( category: any ) => {         // Recibo la categoría para manejar sus valores
 
     const url = `https://api.giphy.com/v1/gifs/search?api_key=tVEBUWNMHylW3BlcvXAKA5ASTaXn7iQm&q=${ category }&limit=10`;    //Al final del buscador tendrá la category que estamos buscando y el limite de imagenes que quiero aparezcan
-    const resp = await fetch ( url );                      // fetch = traer algo, traeme el url
+    const resp = await fetch ( url );                      // fetch = traer algo, traeme el url, OJO: hacer la petición HTTP
     
     const { data } = await resp.json();                    // Desestructuro la data que es lo que me arrojó el postman, y los datos van a estar en el resp.json
 
