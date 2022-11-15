@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { AddCategory } from './components/AddCategory';
-import { GifGrid } from './components/GifGrid';
+import { AddCategory, GifGrid } from './components';      // Importo directamente desde el index que lo saca explicito cuando apunto a la carpeta donde está ubicado
 
 
 export const GifApp = () => {
@@ -15,7 +14,7 @@ export const GifApp = () => {
 
       if (newCategoryLower.includes(onNewCategory.toLowerCase())) return;
 
-      setCategory([ ...category, onNewCategory ]);                      //Toma la ultima impresión de category y le agrega el elemento newCategory
+      setCategory([ onNewCategory, ...category ]);                      //Toma la ultima impresión de category y le agrega el elemento newCategory
     };
 
     return (
