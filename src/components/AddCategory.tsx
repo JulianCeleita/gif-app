@@ -20,7 +20,8 @@ export const AddCategory = ( {onNewCategory}:{onNewCategory:any} ) => {
       }
 
   return (
-    <form onSubmit={ onSubmit }>                            {/* ejecuto función submit al darle enter, al darle submit envío el evento(una lista de caracteristicas que contiene tambien el target con un value(en este caso lo escrito en el input) a una función Onsubmit */}
+    <form onSubmit={ onSubmit } aria-label="form">          {/* ejecuto función submit al darle enter, al darle submit envío el evento(una lista de caracteristicas que contiene tambien el target con un value(en este caso lo escrito en el input) a una función Onsubmit */}
+                                                            {/* aria-label lo uso para que en el test encuentre el formulario */}
         <input 
         type="text"
         placeholder="Buscar Gifs" 
