@@ -6,7 +6,7 @@ describe ( ' Test in getGifs ', () => {
 
         const gifs =await getGifs('Maserati');
 
-        expect ( gifs.length ).toBeGreaterThan( 0 );        // Espero que el largo del arreglo de gifs sea mayor que 0 para que sea válido
+        expect ( gifs.length ).toBeGreaterThan(0);        // Espero que el largo del arreglo de gifs sea mayor que 0 para que sea válido
         expect ( gifs[0] ).toEqual ({                       // Al elemento 0 de gifs debo ver que tenga en ID, title y URL cualquier valor de tipo string,
             id: expect.any( String ),
             title: expect.any( String ),
