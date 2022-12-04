@@ -21,7 +21,7 @@ export const useFetchGifs = ( {category}:{category:string} ) => {
  
 
   return {
-    images,                                     // Envio las images que saqué
-    isLoading,                                  // Mando el resultado a ver si está cargando o no la imagen
+    images,                                             // Envio las images que saqué
+    isLoading,                                          // Mando el resultado a ver si está cargando o no la imagen
   }
 }
